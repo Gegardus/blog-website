@@ -1,24 +1,97 @@
-# README
+![](https://img.shields.io/badge/thecodechaser-blueviolet)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Blog-Website
 
-Things you may want to cover:
+> This project is a classic example of a blog website. It's a functional website that shows the list of posts and empower readers to interact with them by adding comments and liking post.
 
-* Ruby version
+## Built With
 
-* System dependencies
+- Major languages (Ruby)
+- Framworks (Ruby on Rails)
 
-* Configuration
+## Getting Started
 
-* Database creation
+To get a local copy up and running follow these simple example steps.
 
-* Database initialization
+### Prerequisites
 
-* How to run the test suite
+- A text editor(preferably Visual Studio Code)
 
-* Services (job queues, cache servers, search engines, etc.)
+### Install
 
-* Deployment instructions
+- Ruby
+- Ruby on Rails
+- PostgresSQL
+- Rspec
 
-* ...
+### Using it Locally
+
+- Clone the project
+
+### Setup
+
+Install gems with:
+
+```
+bundle install
+```
+
+Setup database with:
+
+```
+rails db:create
+rails db:migrate
+```
+
+### Usage
+
+Start server with:
+
+```
+rails server
+```
+
+Open http://localhost:3000/ in your browser.
+
+### Install linter
+
+```bash
+bundle install
+```
+
+## Visit And Open Files
+
+[Visit Repo](https://github.com/Gegardus/blog-website)
+
+## Clone Repo
+
+[Clone Repo](https://github.com/Gegardus/blog-website.git)
+
+## Author
+
+👤 **Vahan Khachvankian**
+
+- GitHub: [@githubhandle](https://github.com/Gegardus)
+- Twitter: [@twitterhandle](https://twitter.com/Gegardus)
+- LinkedIn: [@linkedinhandle](https://www.linkedin.com/in/vahan-khachvankian)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/Gegardus/school-library/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgements
+
+- A great thanks to my coding partners, morning session team, and standup team partners for their contribution.
+
+- The author highly appreciates the help in the project from all the participants of this week's program - my coding partners, morning session team, and standup team partners - for their contribution.
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
+
