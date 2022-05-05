@@ -59,6 +59,25 @@ Open http://localhost:3000/ in your browser.
 bundle install
 ```
 
+### Run tests
+
+Install rspec with:
+
+```
+bundle install
+```
+
+and
+
+```
+rails generate rspec:install
+
+run the test with:
+
+```
+rails exec rspec
+```
+
 ## Visit And Open Files
 
 [Visit Repo](https://github.com/Gegardus/blog-website)
@@ -94,4 +113,3 @@ Give a ⭐️ if you like this project!
 ## 📝 License
 
 This project is [MIT](./MIT.md) licensed.
-
