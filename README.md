@@ -71,7 +71,7 @@ and
 
 ```
 rails generate rspec:install
-
+```
 run the test with:
 
 ```
