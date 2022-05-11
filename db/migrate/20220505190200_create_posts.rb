@@ -9,9 +9,5 @@ class CreatePosts < ActiveRecord::Migration[7.0]
 
       t.timestamps
     end
-  end
-
-  def change
-    change_column :posts, :comments_counter, :integer, deafult: 0
-  end
+  end  
 end
