@@ -1,5 +1,4 @@
 <h1>User's all posts</h1>
-
 <section>
   <div class="card flex">
     <div class="user-image border">
@@ -8,6 +7,10 @@
     <div class="user-data border">
       <h2><%= @user.name %></h2>
       <p class="posts-number">Number of posts: <%= @user.posts_counter %></p>
+        <div class="right">
+        <%= link_to "All users", users_path, class: "btn right" %>
+        <%= link_to "Add a post", new_user_post_path(user_id: @user.id), class: "btn right" %>
+      </div>
     </div>
   </div>
 </section>
@@ -18,14 +21,14 @@
         <li class="card left">
           <div class="card">
           <p> Post # <%= post.id %> </p>
-            <h3><%= post.title %></h3>
-            <p><%= post.text %></p>
-            <div class="right">
+          <h3><%= post.title %></h3>
+          <p><%= post.text %></p>
+            <div class="end">
               <span>Comments: <%= post.comments_counter %></span>
               <span>Likes: <%= post.likes_counter %> </span>
             </div>
           </div>
-          <div class="commets-container">
+          <div class="comments-container">
             <h4>Comments:</h4>
             <ul>
               <% post.last_comments.each do |comment| %>
