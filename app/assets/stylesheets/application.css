@@ -5,6 +5,11 @@
   color: #020d16;
 }
 
+.container {
+  width: 100%;
+}
+
+
 h1 {
   text-align: center;
 }
@@ -82,5 +87,14 @@ a {
 
 .right {
   position: relative;
-  left: 1080px;
+  left: 520px;
+}
+
+.left {
+  text-align: left;
+}
+
+.end {
+  position: relative;
+  left: 1230px
 }
