@@ -1,2 +1,18 @@
-<h1>List of all Users</h1>
+<h1 class="users-title">List of all Users <%= @users.length %></h1>
+<ul>
+  <% @users.each do |user|%>   
+    <li class="card flex">
+      <div class="user-image border">
+        <img src=<%= user.photo %> alt="image" width="100%" heigth="100%">
+      </div>
+      <div class="user-data border">
+        <h2><%= user.name %></h2>
+        <p class="posts-number">Number of posts: <%= user.posts_counter %></p>
+      </div>
+    </li>    
+  <% end %>
+</ul>
 
+
+  
+ 
