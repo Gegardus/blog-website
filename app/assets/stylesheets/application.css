@@ -9,7 +9,6 @@
   width: 100%;
 }
 
-
 h1 {
   text-align: center;
 }
@@ -96,5 +95,5 @@ a {
 
 .end {
   position: relative;
-  left: 1230px
+  left: 1230px;
 }
