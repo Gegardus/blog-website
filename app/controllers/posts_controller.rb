@@ -13,16 +13,28 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
-  def create
-    @post = Post.new(post_params)
-    @post.author = current_user
+  def create    
+    @new_post = current_user.posts.new(post_params)
 
-    if @post.save
-      redirect_to user_path(id: @post.author_id)
-    else
-      render :new, alert: 'An error has occurred while creating the post'
+    respond_to do |format|
+      if @new_post.save
+        format.html { redirect_to  "/users/#{@new_post.author.id}/posts/", notice: 'Success!'}
+      else
+        format.html { render :new }
+      end
     end
   end
+
+  # def create
+  #   @post = Post.new(post_params)
+  #   @post.author = current_user
+
+  #   if @post.save
+  #     redirect_to user_path(id: @post.author_id)
+  #   else
+  #     render :new, alert: 'An error has occurred while creating the post'
+  #   end
+  # end
 
   private
 
