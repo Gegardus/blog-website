@@ -12,6 +12,6 @@ RSpec.describe Comment, type: :model do
   post.comments.create!(text: 'This is my second post', author: comment_creator)
 
   it 'adds comments' do
-  expect(post.comments.length).to eql(2)
+    expect(post.comments.length).to eql(2)
   end
 end
