@@ -13,12 +13,12 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
-  def create    
+  def create
     @new_post = current_user.posts.new(post_params)
 
     respond_to do |format|
       if @new_post.save
-        format.html { redirect_to  "/users/#{@new_post.author.id}/posts/", flash: { alert: 'Your post saved'} }        
+        format.html { redirect_to "/users/#{@new_post.author.id}/posts/", flash: { alert: 'Your post saved'} }
       else
         format.html { redirect_to "/users/#{@new_post.author.id}/posts/new", flash: { alert: 'Could not save post' } }
       end

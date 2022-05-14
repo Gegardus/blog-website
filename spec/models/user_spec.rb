@@ -1,12 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  subject {User.new(name: 'Ani', photo: 'ani.png', bio: 'Teacher', posts_counter: 0)}
+  subject { User.new(name: 'Ani', photo: 'ani.png', bio: 'Teacher', posts_counter: 0) }
 
-  before {subject.save}
+  before { subject.save }
 
-  it "checks if name present" do
-    subject.name = nil 
+  it 'checks if name present' do
+    subject.name = nil
     expect(subject).to_not be_valid
   end
 

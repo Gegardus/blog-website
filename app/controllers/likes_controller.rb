@@ -1,7 +1,7 @@
 class LikesController < ApplicationController
   def new
     @like = Like.new
-  end 
+  end
 
   def create
     @post = Post.find(params[:post_id])
@@ -11,7 +11,7 @@ class LikesController < ApplicationController
       if @new_like.save
         format.html { redirect_to "/users/#{@post.author_id}/posts/#{@post.id}", flash: { alert: 'Your like saved' } }
       else
-        format.html { redirect_to "/users/#{@post.author_id}/posts/#{@post.id}", flash.now[:error] = 'Could not save like' }
+        format.html { redirect_to "/users/#{@post.author_id}/posts/#{@post.id}", flash: {alert: 'Could not save like' } }
       end
     end
   end

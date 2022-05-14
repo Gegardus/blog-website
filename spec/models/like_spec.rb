@@ -19,5 +19,5 @@ RSpec.describe Like, type: :model do
 
   it 'like must be present' do
     expect(@post.likes.length).to eq 1
-  end 
+  end
 end
