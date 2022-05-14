@@ -18,9 +18,9 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @new_post.save
-        format.html { redirect_to  "/users/#{@new_post.author.id}/posts/", notice: 'Success!'}
+        format.html { redirect_to  "/users/#{@new_post.author.id}/posts/", flash: { alert: 'Your post saved'} }        
       else
-        format.html { render :new }
+        format.html { redirect_to "/users/#{@new_post.author.id}/posts/new", flash: { alert: 'Could not save post' } }
       end
     end
   end

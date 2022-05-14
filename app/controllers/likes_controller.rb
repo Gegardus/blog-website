@@ -9,9 +9,9 @@ class LikesController < ApplicationController
 
     respond_to do |format|
       if @new_like.save
-        format.html { redirect_to "/users/#{@post.author_id}/posts/#{@post.id}", notice: 'Success!' }
+        format.html { redirect_to "/users/#{@post.author_id}/posts/#{@post.id}", flash: { alert: 'Your like saved' } }
       else
-        format.html { redirect_to "/users/#{@post.author_id}/posts/#{@post.id}", alert: 'Error occured!' }
+        format.html { redirect_to "/users/#{@post.author_id}/posts/#{@post.id}", flash.now[:error] = 'Could not save like' }
       end
     end
   end
