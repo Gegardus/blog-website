@@ -3,31 +3,34 @@ require 'rails_helper'
 RSpec.describe 'Posts', type: :request do
   describe 'GET #index' do
     before(:each) do
-      get '/users/0/posts'
+      user = User.create(name: 'Ani', bio: 'My life', photo: 'img.jpg')
+      get user_posts_path(user_id: user.id)
     end
 
-    it 'GET requests response status 200' do
+    it 'GET requests response status was correct' do
       expect(response).to have_http_status(:ok)
     end
 
-    it 'renders a template' do
+    it 'renders a correct template' do
       expect(response).to render_template(:index)
     end
 
-    it 'response body contains correct placeholder text' do
+    it 'response body includes correct placeholder text' do
       expect(response.body).to include('User\'s all posts')
     end
 
     describe 'GET #show' do
       before(:each) do
-        get '/users/1/posts/1'
+        user = User.create(name: 'Ani', bio: 'My life', photo: 'img.jpg')
+        post = Post.create(author: user, title: 'My title', text: 'Some text')
+        get user_post_path(user_id: user.id, id: post.id)
       end
 
-      it 'GET requests response status 200' do
+      it 'GET requests response status was correct' do
         expect(response).to have_http_status(:ok)
       end
 
-      it 'renders a template' do
+      it 'renders a correct template' do
         expect(response).to render_template(:show)
       end
 

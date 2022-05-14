@@ -6,28 +6,29 @@ RSpec.describe 'Users', type: :request do
       get '/users'
     end
 
-    it 'GET requests response status 200' do
+    it 'GET requests response status was correct' do
       expect(response).to have_http_status(:ok)
     end
 
-    it 'renders a template' do
+    it 'renders a correct template' do
       expect(response).to render_template(:index)
     end
 
-    it 'response body contains correct placeholder text' do
+    it 'response body includes correct placeholder text' do
       expect(response.body).to include('List of all Users')
     end
 
     describe 'GET #show' do
       before(:each) do
-        get '/users/1'
+        user = User.create(name: 'Ani', bio: 'My life', photo: 'img.jpg')
+        get user_path(id: user.id)
       end
 
-      it 'GET requests response status 200' do
+      it 'GET requests response status was correct' do
         expect(response).to have_http_status(:ok)
       end
 
-      it 'renders a template' do
+      it 'renders a correct template' do
         expect(response).to render_template(:show)
       end
 
