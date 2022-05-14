@@ -5,9 +5,9 @@ class Post < ApplicationRecord
   has_many :comments
   has_many :likes
 
-  validates :title, presence: true, length: { in 1..250 }
+  validates :title, presence: true, length: { in: 1..250 }
   validates :comments_counter, numericality: { greater_than_or_equal_to: 0 }
-  validates :like_counter, numericality: { greater_than_or_equal_to: 0 }
+  validates :likes_counter, numericality: { greater_than_or_equal_to: 0 }
 
   def last_comments
     comments.limit(5).order(created_at: :desc)
