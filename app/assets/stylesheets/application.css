@@ -15,7 +15,8 @@
   width: 100%;
 }
 
-h1,.center {
+h1,
+.center {
   text-align: center;
 }
 
@@ -79,7 +80,8 @@ a {
   left: 380px;
 }
 
-.btn,.reg-log-btn {
+.btn,
+.reg-log-btn {
   border: 0;
   border-radius: 0.25rem;
   background: #5f7681;
