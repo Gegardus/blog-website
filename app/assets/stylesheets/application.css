@@ -1,7 +1,13 @@
+@font-face {
+  font-family: "MyWebFont";
+  src: url("GemunuLibre-VariableFont_wght.ttf") format("woff2");
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: "MyWebFont", Fallback, sans-serif;
   color: #020d16;
 }
 
@@ -9,7 +15,7 @@
   width: 100%;
 }
 
-h1 {
+h1, .center {
   text-align: center;
 }
 
@@ -63,7 +69,17 @@ a {
   font-weight: 600;
 }
 
-.btn {
+.btn {  
+  position: relative;
+  left: 680px;
+}
+
+reg-log-btn {
+  position: relative;
+  left: 380px;
+}
+
+.btn, .reg-log-btn {
   border: 0;
   border-radius: 0.25rem;
   background: #5f7681;
@@ -76,8 +92,6 @@ a {
   padding: 0.25rem 0.5rem;
   margin: 0.25rem;
   cursor: pointer;
-  position: relative;
-  left: 680px;
 }
 
 .comments-container {
@@ -97,3 +111,69 @@ a {
   position: relative;
   left: 1230px;
 }
+
+.back {
+  position: relative;
+  right: 55px;
+}
+
+nav {
+  width: 100%;
+  top: 0;
+  background: #525e69;
+  color: white;
+  padding: 20px;
+  z-index: 10;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.nav-link {
+  list-style: none;
+  margin-left: 10px;
+}
+
+.nav-link a {
+  padding: 10px;
+  font-size: 16px;
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 5px;
+}
+
+.nav-link button {
+  padding: 10px;
+  font-size: 16px;
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 5px;
+}
+
+.logo a {
+  padding: 10px;
+  font-size: 32px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.form-control {
+  width: 400px;
+  padding: 5px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #191765;
+  margin: 10px;
+} 
