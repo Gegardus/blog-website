@@ -95,6 +95,12 @@ rails exec rspec
 - Twitter: [@twitterhandle](https://twitter.com/Gegardus)
 - LinkedIn: [@linkedinhandle](https://www.linkedin.com/in/vahan-khachvankian)
 
+👤 **Hammas Bin Saleem**
+
+- GitHub: [@HAMMAS-SALEEM](https://github.com/HAMMAS-SALEEM)
+- Twitter: [@HammasSaleem4](https://twitter.com/HammasSaleem4)
+- LinkedIn: [HAMMAS SALEEM](https://www.linkedin.com/in/hammas-saleem)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
