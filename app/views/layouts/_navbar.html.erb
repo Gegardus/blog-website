@@ -12,7 +12,7 @@
               <%= current_user.name %>'s profile
             <% end %>
           </li>
-          <li class="nav-link"><%= button_to("Log Out", destroy_user_session_path, method: :delete,class: "nav-link", class: "btn") %></li>
+          <li class="log-out"><%= button_to("Log Out", destroy_user_session_path, method: :delete, class: "log-out", class: "btn") %></li>
         <% else %>
           <li class="nav-link"><%= link_to "Sign in", new_user_session_path %></li>
           <li class="nav-link"><%= link_to "Sign up", new_user_registration_path %></li>

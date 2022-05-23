@@ -75,11 +75,6 @@ a {
   left: 680px;
 }
 
-.reg-log-btn {
-  position: relative;
-  left: 380px;
-}
-
 .btn,
 .reg-log-btn {
   border: 0;
@@ -178,4 +173,9 @@ nav {
   line-height: 1.2;
   color: #191765;
   margin: 10px;
+}
+ 
+.log-out {
+  position:relative;
+  right: 1350px;
 }
