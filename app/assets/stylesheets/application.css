@@ -15,7 +15,7 @@
   width: 100%;
 }
 
-h1, .center {
+h1,.center {
   text-align: center;
 }
 
@@ -69,17 +69,17 @@ a {
   font-weight: 600;
 }
 
-.btn {  
+.btn {
   position: relative;
   left: 680px;
 }
 
-reg-log-btn {
+.reg-log-btn {
   position: relative;
   left: 380px;
 }
 
-.btn, .reg-log-btn {
+.btn,.reg-log-btn {
   border: 0;
   border-radius: 0.25rem;
   background: #5f7681;
@@ -176,4 +176,4 @@ nav {
   line-height: 1.2;
   color: #191765;
   margin: 10px;
-} 
+}
