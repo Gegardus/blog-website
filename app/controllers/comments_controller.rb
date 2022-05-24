@@ -1,20 +1,31 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user!, only: %i[create destroy]
+  load_and_authorize_resource
+
   def new
     @comment = Comment.new
   end
 
   def create
+    @comment = Comment.new(comment_params)
     @post = Post.find(params[:post_id])
-    @new_comment = current_user.comments.new(comment_params)
-    @new_comment.post_id = params[:post_id]
+    @comment.author_id = current_user.id
+    @comment.post_id = @post.id
 
-    if @new_comment.save
-      redirect_to "/users/#{@post.author_id}/posts/#{@post.id}", flash: { alert: 'Your comment saved' }
+    if @comment.save
+      redirect_to user_post_path(user_id: @post.author_id, id: @post.id)
+      flash[:notice] = 'Your comment was successfully created'
     else
-      flash.now[:error] = 'Could not save comment'
-      @article = Post.find(params[:post_id])
-      redirect_to post_path(@post)
+      render :new, alert: 'An error has occurred while creating the comment'
     end
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    @post = @comment.post
+    @post.decrement!(:comments_counter)
+    @comment.destroy!
+    redirect_to user_post_path(id: @post.id), notice: 'Comment was successfully deleted!'
   end
 
   private

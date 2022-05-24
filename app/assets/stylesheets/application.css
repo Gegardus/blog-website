@@ -91,6 +91,32 @@ a {
   cursor: pointer;
 }
 
+.del-post-btn,
+.del-comm-btn {
+  border: 0;
+  border-radius: 0.25rem;
+  background: #cf0707;
+  color: rgb(223, 203, 203);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.2;
+  white-space: nowrap;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  margin: 0.25rem;
+  cursor: pointer;
+}
+
+.del-post-btn {
+  position: relative;
+  left: 340px;
+}
+
+.del-comm-btn {
+  position: relative;
+  left: 1160px;
+}
+
 .comments-container {
   padding: 10px;
 }
@@ -178,4 +204,14 @@ nav {
 .log-out {
   position: relative;
   right: 1350px;
+}
+
+.update {
+  position: relative;
+  right: 680px;
+}
+
+.alert {
+  color: rgb(12, 107, 12);
+  font-weight: 600;
 }
