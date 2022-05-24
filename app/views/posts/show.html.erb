@@ -28,23 +28,23 @@
   <div class="comments-container">
     <h4>Comments:</h4>
      <ul>
-      <% @post.comments.includes(:author).includes(:post).each do |comment| %>
+      
+       <% @post.comments.includes(:author).each do |comment| %>   
         <li class="flex">
           <p><%= comment.author.name %>: <%= comment.text %></p>
           <% if can? :destroy, comment %>
-            <%= button_to "Delete comment", user_post_path(user_id: comment.author.id, post_id: comment.post.id, id: comment.id), method: :delete, class: 'del-comm-btn'  %>
+            <%= button_to "Delete comment", user_post_comments_path(user_id: comment.author.id, post_id: comment.post.id, id: comment.id), method: :delete, class: 'del-comm-btn'  %>
           <% end %>
+
+
+          
         </li>
       <% end %>
-    </ul>
+
+      </ul>
   </div>
   
-  
-  
-  
-  
-  
-  
+   
   <div class="back">
     <%= link_to "Back to all posts", user_path(id: @post.author_id), class: "btn" %>
   </div>

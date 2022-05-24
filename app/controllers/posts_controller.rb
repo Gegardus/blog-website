@@ -14,14 +14,14 @@ class PostsController < ApplicationController
   end
 
   def create
-    @new_post = current_user.posts.new(post_params)
+    @post = Post.new(post_params)
+    @post.author = current_user
 
-    respond_to do |format|
-      if @new_post.save
-        format.html { redirect_to "/users/#{@new_post.author.id}/posts/", flash: { alert: 'Your post saved' } }
-      else
-        format.html { redirect_to "/users/#{@new_post.author.id}/posts/new", flash: { alert: 'Could not save post' } }
-      end
+    if @post.save
+      redirect_to user_path(id: @post.author_id)
+      flash[:notice] = 'You post was successfully created'
+    else
+      render :new, alert: 'An error has occurred while creating the post'
     end
   end
 
