@@ -1,9 +1,7 @@
 <h1>User's post</h1>
 
 <section class="card">
-
   <p> Post # <%= @post.id %> by <%= @user.name %></p>
-
   <div class="card">
     <h3><%= @post.title %></h3>
     <p><%= @post.text %></p>
@@ -17,14 +15,12 @@
         <%= form_with model: @like, url: user_post_likes_path(post_id: @post.id) do |form| %>
           <%= form.submit "Add like", class: "btn" %>
         <% end %>
-
         <% if can? :destroy, @post %>
           <%= button_to "Delete post", user_post_path(user_id: @post.author.id, post_id: @post.id), method: :delete, class: 'del-post-btn'  %>
         <% end %>
       <% end %>
     </div>
   </div>
-
   <div class="comments-container">
     <h4>Comments:</h4>
      <ul>      
@@ -37,11 +33,8 @@
         </li>
       <% end %>
       </ul>
-  </div>
-  
-   
+  </div>     
   <div class="back">
     <%= link_to "Back to all posts", user_path(id: @post.author_id), class: "btn" %>
   </div>
-
 </section>
