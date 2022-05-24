@@ -76,4 +76,3 @@ end
 
 gem 'cancancan'
 gem 'devise'
-
