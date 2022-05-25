@@ -6,7 +6,7 @@ RSpec.describe 'Users', type: :request do
       get '/users'
     end
 
-    it 'GET requests response status was correct' do
+    it 'shows that GET requests response status was correct' do
       expect(response).to have_http_status(:ok)
     end
 
@@ -14,13 +14,14 @@ RSpec.describe 'Users', type: :request do
       expect(response).to render_template(:index)
     end
 
-    it 'response body includes correct placeholder text' do
+    it 'shows that response body includes correct placeholder text' do
       expect(response.body).to include('List of all Users')
     end
 
     describe 'GET #show' do
       before(:each) do
-        user = User.create(name: 'Ani', bio: 'My life', photo: 'img.jpg')
+        user = User.create(name: 'Ani', photo: 'img.jpg', bio: 'Adviser', email: 'test@email',
+                           password: 'password', confirmed_at: Time.now)
         get user_path(id: user.id)
       end
 
