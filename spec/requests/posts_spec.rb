@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'Posts', type: :request do
@@ -38,7 +40,7 @@ RSpec.describe 'Posts', type: :request do
     end
 
     it 'renders content correctly' do
-      expect(response.body).to include('User\'s post') 
+      expect(response.body).to include('User\'s post')
     end
   end
 end
