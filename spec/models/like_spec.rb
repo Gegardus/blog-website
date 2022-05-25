@@ -1,23 +1,26 @@
 require 'rails_helper'
 
 RSpec.describe Like, type: :model do
-  before(:each) do
-    @user = User.create(name: 'Vahan', photo: 'image.png', bio: 'My life')
-    @post = Post.create(author: @user, title: 'My title', text: 'My text')
-    @like = Like.create(author: @user, post_id: @post.id)
-  end
+  describe 'Validations of the Like model' do
+    before(:each) do
+      @user = User.create(name: 'Ani', photo: 'img.jpg', bio: 'Adviser', email: 'test@email',
+                          password: 'password', confirmed_at: Time.now)
+      @post = Post.create(author: @user, title: 'My title', text: 'My text')
+      @like = Like.create(author: @user, post_id: @post.id)
+    end
 
-  it 'if author_id is present' do
-    @like.author_id = false
-    expect(@like).not_to be_valid
-  end
+    it 'if author_id is present' do
+      @like.author_id = false
+      expect(@like).not_to be_valid
+    end
 
-  it 'if post_id is present' do
-    @like.post_id = nil
-    expect(@like).to_not be_valid
-  end
+    it 'if post_id is present' do
+      @like.post_id = nil
+      expect(@like).to_not be_valid
+    end
 
-  it 'like must be present' do
-    expect(@post.likes.length).to eq 1
+    it 'like must be present' do
+      expect(@post.likes.length).to eq 1
+    end
   end
 end
