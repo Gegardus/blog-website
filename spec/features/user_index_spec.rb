@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 
 RSpec.describe 'User index page', type: :feature do
@@ -18,5 +16,12 @@ RSpec.describe 'User index page', type: :feature do
   end
   it 'shows the number of posts of the the user' do
     expect(page).to have_content 'posts: 1'
+  end
+  it 'shows the users profile picture when clicked' do
+    expect(page.find('img')['src']).to have_content 'img.jpg'
+  end
+  it 'redirects to that users show page when a user clicked' do
+    click_link("Hammas", :match => :prefer_exact)
+    expect(page).to have_current_path(user_path @user.id.to_s)
   end
 end
