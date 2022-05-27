@@ -79,5 +79,6 @@ gem 'blueprinter'
 gem 'cancancan'
 gem 'devise'
 gem 'jwt'
+gem 'rswag'
 gem 'rubocop', '>= 1.0', '< 2.0'
 gem 'rubocop-rails', require: false
