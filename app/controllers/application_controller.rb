@@ -1,7 +1,12 @@
 class ApplicationController < ActionController::Base
   # protect_from_forgery with: :exception
+  before_action :authenticate_user!, unless: :api_path
 
   before_action :update_allowed_parameters, if: :devise_controller?
+
+  def api_path
+    request.original_url.include?('api')
+  end
 
   protected
 

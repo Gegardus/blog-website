@@ -75,7 +75,9 @@ group :test do
   gem 'webdrivers'
 end
 
+gem 'blueprinter'
 gem 'cancancan'
 gem 'devise'
+gem 'jwt'
 gem 'rubocop', '>= 1.0', '< 2.0'
 gem 'rubocop-rails', require: false
