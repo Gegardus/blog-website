@@ -3,6 +3,7 @@
       <div class="heading">
         <h2 class="logo"><%= link_to "Lucky Blog", users_path %></h2>
       </div>
+
       <ul class="nav-ul">
         <% if user_signed_in? %>
           <li class="nav-link"><%= link_to "My posts", user_posts_path(current_user.id) %></li>
@@ -13,7 +14,7 @@
               <%= current_user.name %>'s profile
             <% end %>
           </li>
-          <li class="log-out"><%= button_to("Log Out", destroy_user_session_path, method: :delete, class: "log-out", class: "btn") %></li>
+             <li class="log-out"><%= button_to("Log Out", destroy_user_session_path, method: :delete,class: "nav-link", class: "btn") %></li>
         <% else %>
           <li class="nav-link"><%= link_to "Sign in", new_user_session_path %></li>
           <li class="nav-link"><%= link_to "Sign up", new_user_registration_path %></li>

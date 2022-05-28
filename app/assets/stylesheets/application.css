@@ -70,6 +70,15 @@ a {
   font-weight: 600;
 }
 
+.justify-comment {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.comment {
+  padding: 15px;
+}
+
 .btn {
   position: relative;
   left: 680px;
@@ -113,8 +122,9 @@ a {
 }
 
 .del-comm-btn {
-  position: relative;
+  position: fixed;
   left: 1100px;
+  padding: 0.5rem 0.5rem;
 }
 
 .comments-container {

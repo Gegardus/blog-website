@@ -25,8 +25,8 @@
     <h4>Comments:</h4>
      <ul>      
        <% @post.comments.includes(:author).includes(:post).each do |comment| %>   
-        <li class="flex">
-          <p><%= comment.author.name %>: <%= comment.text %></p>
+        <li class="flex justify-comment">
+          <p class="comment"><%= comment.author.name %>: <%= comment.text %></p>
           <% if can? :destroy, comment %>
             <%= button_to "Delete comment", user_post_comment_path(user_id: comment.author.id, post_id: comment.post.id, id: comment.id), method: :delete, class: 'del-comm-btn'  %>
           <% end %>          
