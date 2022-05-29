@@ -2,7 +2,7 @@
 
 # Blog-Website
 
-> This project is a classic example of a blog website. It's a functional website that shows the list of posts and empower readers to interact with them by adding comments and liking post.
+>  The Blog app will let users view post blogs, make comments and likes.
 
 ## Built With
 
